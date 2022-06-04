@@ -76,9 +76,9 @@
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper bg-color">
-        <div class="content-header bg-black">
-            @yield('header')
-        </div>
+{{--        <div class="content-header bg-black">--}}
+{{--            @yield('header')--}}
+{{--        </div>--}}
         <section class="content">
             @yield('content')
         </section>
