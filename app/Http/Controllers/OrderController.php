@@ -105,7 +105,6 @@ class OrderController extends Controller
             'allergies_info'=>'',
             'additional_instructions' =>'',
         ]);
-        dd( $validatedAtributes);
         return $validatedAtributes;
     }
 }
