@@ -63,7 +63,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8','confirmed'],
         );
 
-        $validator = Validator::make($data, $rules,$messsages);
+        return Validator::make($data, $rules,$messsages);
 
 //        return Validator::make($data, [
 //            'name' => ['required', 'string', 'max:255'],
