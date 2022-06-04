@@ -73,7 +73,6 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $order->update($this->validateOrder($request));
-        dd($order);
         return redirect(route('orders.show', $order));
     }
 
@@ -96,6 +95,7 @@ class OrderController extends Controller
      */
     public function validateOrder(Request $request): array
     {
+        dd($request);
         $validatedAtributes = $request->validate([
             'user_id'=>'required',
             'drink'=>'required|string',
