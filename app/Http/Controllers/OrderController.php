@@ -36,6 +36,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $order = Order::create($this->validateOrder($request));
         // redirecting to show a page
         return redirect(route('orders.show', compact('order')));
