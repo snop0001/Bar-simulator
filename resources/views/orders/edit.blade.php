@@ -97,7 +97,7 @@
                                     <label class="custom-control-label" for="alco2">Regular</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="alco3" name="alcohol_level" class="custom-control-input" value="Extra Strong" {{ $order->alcohol_level==="Regular" ? 'checked='.'"'.'checked'.'"' : '' }}required>
+                                    <input type="radio" id="alco3" name="alcohol_level" class="custom-control-input" value="Extra Strong" {{ $order->alcohol_level==="Extra Strong" ? 'checked='.'"'.'checked'.'"' : '' }}required>
                                     <label class="custom-control-label" for="alco3">Extra Strong</label>
                                 </div>
                             </div>
