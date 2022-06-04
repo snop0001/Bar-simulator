@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\Console\Input\Input;
 
 class RegisterController extends Controller
 {
@@ -49,11 +50,26 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
-        ]);
+        $messsages = array(
+            'name.required'=>'You cant leave name field empty',
+            'email.required'=>'You cant leave email field empty',
+            'password.required'=>'You cant leave password field empty',
+            'password.min'=>'The field has to be :8 chars long',
+        );
+
+        $rules = array(
+            'name' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:30', 'unique:users'],
+            'password' => ['required', 'string', 'min:8','confirmed'],
+        );
+
+        $validator = Validator::make($data, $rules,$messsages);
+
+//        return Validator::make($data, [
+//            'name' => ['required', 'string', 'max:255'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['required', 'string', 'min:8'],
+//        ]);
     }
 
     /**
