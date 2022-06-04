@@ -112,11 +112,11 @@
                             <label for="allergies">Do you have allergies?</label>
                                 <div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input onclick=isChecked() type="radio" id="al1" name="allergies" class="custom-control-input" value=1 {{$order->allergies===true ? 'checked='.'"'.'checked'.'"' : '' }} required>
+                                        <input onclick=isChecked() type="radio" id="al1" name="allergies" class="custom-control-input" value=true {{$order->allergies===true ? 'checked='.'"'.'checked'.'"' : '' }} required>
                                         <label class="custom-control-label" for="al1">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input onclick=isChecked() type="radio" id="al2" name="allergies" class="custom-control-input" value=0 {{$order->allergies===false ? 'checked='.'"'.'checked'.'"' : '' }}required>
+                                        <input onclick=isChecked() type="radio" id="al2" name="allergies" class="custom-control-input" value=false {{$order->allergies===false ? 'checked='.'"'.'checked'.'"' : '' }}required>
                                         <label class="custom-control-label" for="al2">No</label>
                                     </div>
                                 </div>
