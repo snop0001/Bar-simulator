@@ -40,8 +40,8 @@
                                     <td>{{$order->amount}}</td>
                                     <td>{{$order->ice}}</td>
                                     <td> {{$order->alcohol_level}}</td>
-                                    <td class = "{{$order->allergies === false ? 'bg-light-gray':'bg-warning'}}">
-                                        {{$order->allergies === false ? 'No Reported Allergies': $order->allergies_info}}</td>
+                                    <td class = "{{$order->allergies === 0||$order->allergies === false ? 'bg-light-gray':'bg-warning'}}">
+                                        {{$order->allergies === 0||$order->allergies === false ? 'No Reported Allergies': $order->allergies_info}}</td>
                                     <td class = "{{$order->additional_instructions === null ? 'bg-light-gray':''}}">
                                         {{$order->allergies_info}}</td>
                                     <td>{{$order->created_at}}</td>
