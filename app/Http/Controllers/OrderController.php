@@ -95,7 +95,6 @@ class OrderController extends Controller
      */
     public function validateOrder(Request $request): array
     {
-        dd($request);
         $validatedAtributes = $request->validate([
             'user_id'=>'required',
             'drink'=>'required|string',
@@ -106,7 +105,7 @@ class OrderController extends Controller
             'allergies_info'=>'',
             'additional_instructions' =>'',
         ]);
-
+        dd( $validatedAtributes);
         return $validatedAtributes;
     }
 }
