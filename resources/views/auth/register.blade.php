@@ -64,7 +64,7 @@
                     <input type="password"
                            name="password"
                            class="form-control @error('password') is-invalid @enderror"
-                           placeholder="Password" required>
+                           placeholder="Password" min="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
@@ -79,7 +79,7 @@
                     <input type="password"
                            name="password_confirmation"
                            class="form-control"
-                           placeholder="Retype password" required>
+                           placeholder="Retype password" min="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
