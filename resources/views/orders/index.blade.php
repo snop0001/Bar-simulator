@@ -33,7 +33,7 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <th scope="row"><a
-                                            href="{{Route('orders.show',['order'=>$order, 'user'=>(Auth::user())])}}">{{ $order->id }}</a>
+                                            href="{{Route('orders.show',$order)}}">{{ $order->id }}</a>
                                     </th>
                                     <td>{{$order->drink}}</td>
                                     <td>{{$order->amount}}</td>

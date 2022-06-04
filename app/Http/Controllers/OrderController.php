@@ -25,7 +25,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(User $user)
+    public function create()
     {
         return view('orders.create');
     }
@@ -36,7 +36,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user)
+    public function store(Request $request)
     {
         $order = Order::create($this->validateOrder($request));
         // redirecting to show a page
@@ -49,7 +49,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order,User $user)
+    public function show(Order $order)
     {
         return view('orders.show', compact('order'));
     }
@@ -60,7 +60,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order,User $user)
+    public function edit(Order $order)
     {
         return view('orders.edit', compact('order'));
     }
@@ -72,7 +72,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order,User $user)
+    public function update(Request $request, Order $order)
     {
         $order->update($this->validateOrder($request));
         return redirect(route('orders.show', $order));
@@ -84,7 +84,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order,User $user)
+    public function destroy(Order $order)
     {
         $order->delete();
         return redirect(route('orders.index'));

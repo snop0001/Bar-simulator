@@ -15,7 +15,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form class="was-validated" method="POST" action="{{ route('orders.update',['order'=>$order,'user'=>(Auth::user())]) }}">
+                <form class="was-validated" method="POST" action="{{ route('orders.update',$order) }}">
                     @csrf
                     @method('PUT')
                     <div style="display:none">
@@ -157,12 +157,12 @@
                     <br>
                     <div class="float-left">
                         <button type="reset" class="btn btn-warning btn-lg">Reset</button>
-                        <a type="button" href="{{ route('orders.show', ['order'=>$order,'user'=>(Auth::user())]) }}"
+                        <a type="button" href="{{ route('orders.show', $order) }}"
                            class="btn btn-light btn-lg">Cancel</a>
                     </div>
                 </form>
 
-                <form method="POST" action="{{route('orders.destroy',  ['order'=>$order,'user'=>(Auth::user())])}}">
+                <form method="POST" action="{{route('orders.destroy', $order)}}">
                     @csrf
                     @method('DELETE')
                     <button  onclick="return confirm('Are you sure?')" class="btn btn-danger btn-lg float-right" type="submit">Delete</button>
