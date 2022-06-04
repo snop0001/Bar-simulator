@@ -126,7 +126,7 @@
                             </div>
 
 
-                        <div id="allergies-box" @if($order->allergies ===0) style="display:none" @endif  class="col-md-6 mb-3">
+                        <div id="allergies-box" @if($order->allergies ===false) style="display:none" @endif  class="col-md-6 mb-3">
                             <label for="allergies_info">Please write them down here</label>
                             <div>
                         <textarea id='info' name="allergies_info"
