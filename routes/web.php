@@ -26,6 +26,6 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Order
-Route::resource('/orders', OrderController::class);
+Route::resource('/orders/{user}', OrderController::class);
 
 URL::forceScheme('https');

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -12,9 +14,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
-        $orders = Order::orderBy('created_at', 'desc')->get();
+        $orders = Order::find('user_id',$user->id)->orderBy('created_at', 'desc')->get();
         return view('orders.index', compact('orders'));
     }
 
@@ -23,7 +25,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
         return view('orders.create');
     }
@@ -34,7 +36,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
         $order = Order::create($this->validateOrder($request));
         // redirecting to show a page
@@ -47,7 +49,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(Order $order,User $user)
     {
         return view('orders.show', compact('order'));
     }
@@ -58,7 +60,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(Order $order,User $user)
     {
         return view('orders.edit', compact('order'));
     }
@@ -70,7 +72,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Order $order,User $user)
     {
         $order->update($this->validateOrder($request));
         return redirect(route('orders.show', $order));
@@ -82,7 +84,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Order $order,User $user)
     {
         $order->delete();
         return redirect(route('orders.index'));

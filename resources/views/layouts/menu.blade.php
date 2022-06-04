@@ -4,7 +4,7 @@
         <i class="nav-icon fas fa-home"></i>
         <p>Home</p>
     </a>
-    <a href="{{ route('orders.index') }}" class="nav-link {{ Request::is('orders') ? 'active' : '' }}">
+    <a href="{{route('orders.index',['user'=>(Auth::user())]) }}" class="nav-link {{ Request::is('orders') ? 'active' : '' }}">
         <i class="nav-icon fas fa-tags"></i>
         <p>Orders</p>
     </a>

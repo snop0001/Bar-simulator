@@ -35,7 +35,7 @@
                 </div>
                 <div class="control">
                     <button class="btn bg-pink btn-lg float-right"
-                            onclick=window.location.href="{{route('orders.edit', $order)}}">
+                            onclick=window.location.href="{{route('orders.edit', ['order'=>$order,'user'=>(Auth::user())])}}">
                         Edit Order Details
                     </button>
                 </div>

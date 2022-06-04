@@ -15,7 +15,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form class="was-validated" method="POST" action="{{ route('orders.store') }}">
+                <form class="was-validated" method="POST" action="{{ route('orders.store',['user'=>(Auth::user())]) }}">
                     @csrf
                     <div style="display:none">
                         <label for="user_id"></label>
