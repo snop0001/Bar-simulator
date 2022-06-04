@@ -112,11 +112,11 @@
                             <label for="allergies">Do you have allergies?</label>
                                 <div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input onclick=isChecked() type="radio" id="al1" name="allergies" class="custom-control-input" value=1 {{$order->allergies===1 ? 'checked='.'"'.'checked'.'"' : '' }} required>
+                                        <input onclick=isChecked() type="radio" id="al1" name="allergies" class="custom-control-input" value=1 {{$order->allergies===true ? 'checked='.'"'.'checked'.'"' : '' }} required>
                                         <label class="custom-control-label" for="al1">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input onclick=isChecked() type="radio" id="al2" name="allergies" class="custom-control-input" value=0 {{$order->allergies===0 ? 'checked='.'"'.'checked'.'"' : '' }}required>
+                                        <input onclick=isChecked() type="radio" id="al2" name="allergies" class="custom-control-input" value=0 {{$order->allergies===false ? 'checked='.'"'.'checked'.'"' : '' }}required>
                                         <label class="custom-control-label" for="al2">No</label>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                             </div>
 
 
-                        <div id="allergies-box" @if($order->allergies ===0) style="display:none" @endif  class="col-md-6 mb-3">
+                        <div id="allergies-box" @if($order->allergies ===false) style="display:none" @endif  class="col-md-6 mb-3">
                             <label for="allergies_info">Please write them down here</label>
                             <div>
                         <textarea id='info' name="allergies_info"

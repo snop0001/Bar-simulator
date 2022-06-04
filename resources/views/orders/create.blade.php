@@ -156,10 +156,10 @@
         function isChecked() {
             if (checkbox.checked) {
                 box.style.display = 'block';
-                checkbox.value=1;
+                checkbox.value=true;
             } else {
                 box.style.display = 'none';
-                checkbox.value=0;
+                checkbox.value=false;
             }
         }
     </script>
