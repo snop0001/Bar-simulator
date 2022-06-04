@@ -27,3 +27,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Order
 Route::resource('/orders', OrderController::class);
+
+URL::forceScheme('https');
