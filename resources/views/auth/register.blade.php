@@ -54,7 +54,7 @@
                         <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                     </div>
                     @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span>
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
@@ -69,7 +69,7 @@
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                     @error('password')
-                    <span class="invalid-feedback" role="alert">
+                    <span>
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
