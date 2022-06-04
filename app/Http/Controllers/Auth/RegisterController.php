@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\Console\Input\Input;
@@ -49,21 +48,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(Request $request)
+    protected function validator(array $data)
     {
-        $validatedAtributes = $request->validate([
-            'name' => ['required'| 'string'| 'max:255'],
-            'email' => ['required'| 'string'| 'max:255'|'unique:users'|'email'],
-            'password' => ['required'|'string'|'min:8'|'confirmed'],
+        $message = [
+            'email.required' => 'Wir benötigen deine Email-Adresse!',
+            'email.unique' => 'Diese Adresse ist bereits registriert!',
+            'email.max' => 'Deine Email-Adresse darf maximal 255 Zeichen lang sein!',
+            'lastname.required' => 'Dein Name wird benötigt!',
+            'lastname.max' => 'Dein Name darf maximal 255 Zeichen lang sein!',
+            'password.required' => 'Du benötigst ein Passwort!',
+            'password.confirmed' => 'Da stimmt etwas nicht?! Passwörter sind nicht gleich!',
+            'password.min' => 'Dein Passwort ist zu kurz!',
+            'firstname.required' => 'Dein Vorname wird benötigt!',
+            'firstname.max' => 'Dein Vorname darf nur 255 Zeichen lang sein!',
+            'username.required' => 'Ein Nutzername wird benötigt',
+            'username.max' => 'Dein Nutzername darf nicht länger als 70  Zeichen sein!',
+            'username.unique' => 'Dieser Nutzername wird bereits verwendet, bitte benutze einen anderen!'
+        ];
 
-        ]);
-
-        return $validatedAtributes;
-//        return Validator::make($request, [
-//            'name' => ['required', 'string', 'max:255'],
-//            'email' => ['required', 'string', 'max:255', 'unique:users','email'],
-//            'password' => ['required', 'string', 'min:8','confirmed'],
-//        ]);
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255', 'unique:users','email'],
+            'password' => ['required', 'string', 'min:8','confirmed'],
+        ], $message);
     }
 
     /**
@@ -72,10 +79,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(Request $request)
+    protected function create(array $data)
     {
-
-        return User::create($this->validator($request));
-
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
     }
 }
