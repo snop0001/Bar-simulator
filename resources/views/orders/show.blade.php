@@ -58,7 +58,7 @@
             </ul>
             <h5 class="card bg-gradient-black">Extra Information provided: </h5>
             <h5><span
-                    class="badge badge-pill {{$order->allergies === 0 ? 'bg-light-gray':'bg-warning'}}"> {{$order->allergies === 0 ? 'No Reported Allergies': 'Allergies mentioned'}}</span>
+                    class="badge badge-pill {{$order->allergies === false ? 'bg-light-gray':'bg-warning'}}"> {{$order->allergies === 0 ? 'No Reported Allergies': 'Allergies mentioned'}}</span>
             </h5>
             <strong>{{$order->allergies === 0 ? '': $order->allergies_info}}</strong>
             <h5 class="card bg-gradient-black">Instructions asked for:</h5>
