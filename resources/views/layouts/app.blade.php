@@ -34,6 +34,16 @@
                          class=" img-md img-circle elevation-2 border-dark" alt="User Image">
 
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    <a href="#" class="btn btn-default btn-flat float-right"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Sign out
+                    </a>
+                </form>
+
+
+                </button>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
