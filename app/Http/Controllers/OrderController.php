@@ -72,6 +72,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
+        dd($request);
         $order->update($this->validateOrder($request));
         return redirect(route('orders.show', $order));
     }
