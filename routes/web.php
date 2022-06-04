@@ -27,8 +27,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Order
 Route::resource('/orders', OrderController::class);
-//stop production route
-Route::get('/orders/{user}', [OrderController::class, 'index'])->name('orders.index');
 
 
 URL::forceScheme('https');

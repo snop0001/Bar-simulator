@@ -31,6 +31,7 @@
                             </thead>
                             <tbody class="bg-gradient-light">
                             @foreach($orders as $order)
+                                @if($order->user->id === Auth::user()->id)
                                 <tr>
                                     <th scope="row"><a
                                             href="{{Route('orders.show',$order)}}">{{ $order->id }}</a>
@@ -46,6 +47,7 @@
                                     <td>{{$order->created_at}}</td>
                                     <td>{{$order->updated_at}}</td>
                                 </tr>
+                                @endif
                             @endforeach
                             </tbody>
                         </table>
