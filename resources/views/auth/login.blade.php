@@ -18,7 +18,7 @@
 <body class="hold-transition login-page bg-img-login">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><h1 class="bg-gradient-fuchsia rounded-top">{{ config('app.name') }}</h1></a>
+        <a href="{{ url('/home') }}"><h1 class="bg-gradient-fuchsia rounded-top">Test {{ config('app.name') }}</h1></a>
     </div>
     <!-- /.login-logo -->
 
