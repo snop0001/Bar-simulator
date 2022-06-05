@@ -35,7 +35,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
-                    <li class="user-header bg-primary">
+                    <li class="user-header bg-gradient-fuchsia">
                         <img src="/img/customer.png"
                              class="img-circle elevation-2"
                              alt="User Image">
@@ -46,7 +46,7 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+{{--                        <a href="#" class="btn btn-default btn-flat">Profile</a>--}}
                         <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Sign out

@@ -18,7 +18,7 @@
 <body class="hold-transition register-page bg-img-login">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{ url('/home') }}"><h1 class="bg-gradient-fuchsia rounded-top" >{{ config('app.name') }}</h1></a>
     </div>
 
     <div class="card">
