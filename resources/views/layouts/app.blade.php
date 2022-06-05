@@ -32,18 +32,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <img src="/img/customer.png"
                          class=" img-md img-circle elevation-2 border-dark" alt="User Image">
-
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                    <button href="#" class="btn btn-default btn-flat float-right"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Sign out
-                    </button>
-                </form>
-
-
-                </button>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
