@@ -146,7 +146,7 @@
                         <textarea name="additional_instructions"
                                   class="form-control is-valid"
                                   type="text"
-                                  placeholder="Name your allergies here">{{$order->additional_instructions}}</textarea>
+                                  placeholder="Any other instructions you would like us to follow when making your drinks">{{$order->additional_instructions}}</textarea>
                         </div>
                         @error('additional_instructions')
                         <p class="text-red">{{ $message }}</p>
