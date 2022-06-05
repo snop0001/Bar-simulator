@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('header')
+    <div class="content-header">
+        <h1 class="text-center text-pink text-xl"> Want to change your order {{ Auth::user()->name}}?</h1>
+    </div>
+@endsection
 
 @section('content')
     <br>

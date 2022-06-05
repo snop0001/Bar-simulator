@@ -1,11 +1,16 @@
 @extends('layouts.app')
+@section('header')
+    <div class="content-header">
+        <h1 class="text-center text-pink text-xl"> Hello {{Auth::user()->name}}, are you ready to order?</h1>
+    </div>
+@endsection
 
 @section('content')
     <br>
     <div class="container-fluid">
         <div class="card bg-card ">
             <div class="card-header bg-gradient-lightblue">
-                <h3 class=" text-center ">Hello {{Auth::user()->name}},  Do you want to send a new order for the bar?</h3>
+                <h3 class=" text-center "> send a new order for the bar</h3>
                 <div class="card-tools">
                     <!-- Buttons, labels, and many other things can be placed here! -->
                     <!-- Here is a label for example -->
