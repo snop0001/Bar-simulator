@@ -2,7 +2,7 @@
 
 @section('header')
     <div class="content-header">
-        <h1 class="text-center text-pink text-xl"> are All Your Orders {{ Auth::user()->name}}</h1>
+        <h1 class="text-center text-pink text-xl"> Here are All Your Orders {{ Auth::user()->name}}</h1>
     </div>
 @endsection
 
