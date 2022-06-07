@@ -124,9 +124,10 @@
                             <label for="allergies_info">Please write them down here</label>
                             <div>
                         <textarea name="allergies_info"
+                                  id="textAreaAllergy"
                                   class="form-control is-invalid"
                                   type="text"
-                                  placeholder="Name your allergies here">{{old('allergies_info')}}</textarea>
+                                  placeholder="Name your allergies here" >{{old('allergies_info')}}</textarea>
                             </div>
                             @error('allergies_info')
                             <p class="text-red">{{ $message }}</p>
@@ -162,9 +163,11 @@
             if (checkbox.checked) {
                 box.style.display = 'block';
                 checkbox.value=1;
+                document.getElementById(" textAreaAllergy").required = true;
             } else {
                 box.style.display = 'none';
                 checkbox.value=0;
+                document.getElementById(" textAreaAllergy").required = false;
             }
         }
     </script>
