@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\{OrderController, HomeController};
 use Illuminate\Support\Facades\Route;
 
 /*
