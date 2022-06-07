@@ -158,16 +158,16 @@
         const checkbox = document.getElementById('allergies_checkbox');
 
         const box = document.getElementById('allergies-box');
-
+        const input = document.getElementById('textAreaAllergy');
+        
         function isChecked() {
             if (checkbox.checked) {
                 box.style.display = 'block';
                 checkbox.value=1;
-                document.getElementById(" textAreaAllergy").required = true;
+                input.setAttribute('required', '');
             } else {
                 box.style.display = 'none';
                 checkbox.value=0;
-                document.getElementById(" textAreaAllergy").required = false;
             }
         }
     </script>
