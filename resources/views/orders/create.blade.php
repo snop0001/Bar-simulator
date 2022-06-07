@@ -159,7 +159,7 @@
 
         const box = document.getElementById('allergies-box');
         const input = document.getElementById('textAreaAllergy');
-        
+
         function isChecked() {
             if (checkbox.checked) {
                 box.style.display = 'block';

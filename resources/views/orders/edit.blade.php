@@ -134,7 +134,7 @@
                         <div id="allergies-box" @if($order->allergies ===false) style="display:none" @endif  class="col-md-6 mb-3">
                             <label for="allergies_info">Please write them down here</label>
                             <div>
-                        <textarea id='info' name="allergies_info"
+                        <textarea  id="textAreaAllergy" name="allergies_info"
                                   class="form-control is-invalid"
                                   type="text"
                                   placeholder="Name your allergies here" >{{$order->allergies_info}}</textarea>
@@ -178,14 +178,15 @@
                 const no = document.getElementById('al2');
 
                 const box = document.getElementById('allergies-box');
-                const info = document.getElementById('info');
+                const input = document.getElementById('textAreaAllergy');
 
                 function isChecked() {
                     if (yes.checked) {
                         box.style.display = 'block';
+                        input.setAttribute('required', '');
                     } else {
                         box.style.display = 'none';
-                        info.value=null;
+                        input.value=null;
                     }
                 }
             </script>
