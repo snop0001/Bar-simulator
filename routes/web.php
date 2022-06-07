@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\{OrderController, HomeController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,36 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('admin',function() {
     return view('layouts.app');
 });
-
-Auth::routes();
-
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-// Order
-Route::resource('/orders', OrderController::class);
-
-
-URL::forceScheme('https');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();

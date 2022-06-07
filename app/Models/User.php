@@ -41,12 +41,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    /**
-     *Getts the orders related to the pallet
-     */
-    public function orders()
-    {
-        return $this->hasMany(Order::class,'user_id');
-    }
 }

@@ -1,6 +1,6 @@
 <?php
+
 use Illuminate\Support\Str;
-$DATABASE_URL=parse_url('postgres://ibccjvisrrvcif:1a1b36ecfa818cf71e8bb10713cc896dab290537f15bfa69f4be724c23af4d54@ec2-34-231-221-151.compute-1.amazonaws.com:5432/d6ucqij9b0eau9');
 
 return [
 
@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,17 +64,18 @@ return [
         ],
 
         'pgsql' => [
-           'driver' => 'pgsql',
-           'host' => $DATABASE_URL["host"],
-           'port' => $DATABASE_URL["port"],
-           'database' => ltrim($DATABASE_URL["path"], "/"),
-           'username' => $DATABASE_URL["user"],
-           'password' => $DATABASE_URL["pass"],
-           'charset' => 'utf8',
-           'prefix' => '',
-           'schema' => 'public',
-           'sslmode' => 'require',
-
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
         ],
 
         'sqlsrv' => [
