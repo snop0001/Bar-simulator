@@ -13,14 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 
 Route::get('admin',function() {
     return view('layouts.app');
 });
 
-Auth::routes();
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Order
+Route::resource('/orders', OrderController::class);
+
+
+
+URL::forceScheme('https');
+
