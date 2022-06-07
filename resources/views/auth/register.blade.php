@@ -15,17 +15,17 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition register-page bg-img-login">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{ url('/home') }}"><h1 class="bg-gradient-fuchsia rounded-top" >{{ config('app.name') }}</h1></a>
     </div>
 
     <div class="card">
         <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new membership</p>
 
-            <form method="post" action="{{ route('register') }}">
+            <form class="was-validated" method="post" action="{{ route('register') }}">
                 @csrf
 
                 <div class="input-group mb-3">
@@ -33,7 +33,7 @@
                            name="name"
                            class="form-control @error('name') is-invalid @enderror"
                            value="{{ old('name') }}"
-                           placeholder="Full name">
+                           placeholder="Full name" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-user"></span></div>
                     </div>
@@ -49,12 +49,12 @@
                            name="email"
                            value="{{ old('email') }}"
                            class="form-control @error('email') is-invalid @enderror"
-                           placeholder="Email">
+                           placeholder="Email must have @" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                     </div>
                     @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span>
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
@@ -64,12 +64,12 @@
                     <input type="password"
                            name="password"
                            class="form-control @error('password') is-invalid @enderror"
-                           placeholder="Password">
+                           placeholder="Password" minlength="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                     @error('password')
-                    <span class="invalid-feedback" role="alert">
+                    <span>
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
@@ -79,7 +79,7 @@
                     <input type="password"
                            name="password_confirmation"
                            class="form-control"
-                           placeholder="Retype password">
+                           placeholder="Retype password" minlength="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
