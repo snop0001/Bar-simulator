@@ -186,6 +186,7 @@
                         input.setAttribute('required', '');
                     } else {
                         box.style.display = 'none';
+                        input.removeAttribute('required');
                         input.value=null;
                     }
                 }

@@ -168,6 +168,7 @@
             } else {
                 box.style.display = 'none';
                 checkbox.value=0;
+                input.removeAttribute('required');
             }
         }
     </script>
