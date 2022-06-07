@@ -43121,3 +43121,37 @@ a.text-muted:hover {
 .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:hover, .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:focus {
   color: #3f474e;
 }
+
+.bg-img-login {
+    background-image:url('/img/cocktailBackground2.png');
+    object-fit:fill;
+}
+
+.bg-img-header {
+    background-image:url('/img/cocktailBackground.png');
+    object-fit:cover;
+}
+
+
+.bg-color {
+    background-color: #f5e3eb;
+}
+
+.create-order-card-titles {
+    background-color: #94c1db;
+    color: #ece7e7;
+}
+
+.bg-card {
+    background-color: #e7eaec;
+}
+
+.bg-gradient-pink {
+    background: #ad2cab linear-gradient(180deg, #cd31c9, #670c6d) repeat-x !important;
+    color: #fff;
+}
+
+.bg-gradient-black {
+    background: #4e114e linear-gradient(180deg, #42073e, #1e0321) repeat-x !important;
+    color: #fff;
+}
